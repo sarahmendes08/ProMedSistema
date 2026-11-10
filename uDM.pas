@@ -177,6 +177,7 @@ type
     FDTTransferenciastranferencia_QuartoDeorigem: TIntegerField;
     FDTTransferenciasTransferência_QuartoDestino: TIntegerField;
     FDTTransferenciasTransferencia_Internacao: TIntegerField;
+    FDQuery1: TFDQuery;
     procedure FDTAtendimentosqueixa_principalGetText(Sender: TField;
       var Text: string; DisplayText: Boolean);
     procedure FDTAtendimentosdiagnosticoGetText(Sender: TField;

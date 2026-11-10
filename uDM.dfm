@@ -2,7 +2,7 @@
   Height = 807
   Width = 1006
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
-    VendorLib = 'C:\Users\Aluno\Desktop\Trabalho Final\ProMedSistema\libmysql.dll'
+    VendorLib = 'C:\Users\Aluno\Desktop\Teste\ProMedSistema\libmysql.dll'
     Left = 96
     Top = 48
   end
@@ -17,7 +17,6 @@
     Top = 48
   end
   object FDTSalas: TFDTable
-    Active = True
     IndexFieldNames = 'id_sala;id_setor'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -63,7 +62,6 @@
     Top = 136
   end
   object FDTAtendimentos: TFDTable
-    Active = True
     IndexFieldNames = 'id_atendimento;id_hospital;id_medico;id_paciente'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -160,7 +158,6 @@
     Top = 208
   end
   object FDTCidades: TFDTable
-    Active = True
     IndexFieldNames = 'id_cidade'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -192,7 +189,6 @@
     Top = 280
   end
   object FDTClinicas: TFDTable
-    Active = True
     IndexFieldNames = 'id_clinica;id_hospital'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -249,7 +245,6 @@
     Top = 360
   end
   object FDTConvenios: TFDTable
-    Active = True
     IndexFieldNames = 'id_convenio'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -299,7 +294,6 @@
     Top = 440
   end
   object FDTHospitais: TFDTable
-    Active = True
     IndexFieldNames = 'id_hospital;id_cidade'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -390,7 +384,6 @@
     Top = 504
   end
   object FDTInternacoes: TFDTable
-    Active = True
     IndexFieldNames = 'id_convenio;id_internacao;id_medico;id_paciente;id_quarto'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -470,7 +463,6 @@
     Top = 584
   end
   object FDTMedicos: TFDTable
-    Active = True
     IndexFieldNames = 'id_medico'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -602,7 +594,6 @@
     Top = 744
   end
   object FDTPacientes: TFDTable
-    Active = True
     IndexFieldNames = 'id_cidade;id_convenio;id_paciente;id_responsavel'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -800,7 +791,6 @@
     Top = 136
   end
   object FDTResponsaveis: TFDTable
-    Active = True
     IndexFieldNames = 'id_cidade;id_responsavel'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -883,7 +873,6 @@
     Top = 224
   end
   object FDTSetores: TFDTable
-    Active = True
     IndexFieldNames = 'id_clinica;id_hospital;id_setor'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -1065,5 +1054,10 @@
       Required = True
       Size = 50
     end
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 880
+    Top = 368
   end
 end
