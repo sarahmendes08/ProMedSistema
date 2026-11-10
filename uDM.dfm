@@ -1066,8 +1066,4 @@
       Size = 50
     end
   end
-  object FDConnection2: TFDConnection
-    Left = 912
-    Top = 368
-  end
 end

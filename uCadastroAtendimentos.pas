@@ -36,7 +36,6 @@ type
   public
     function ValidarCampos: Boolean; override;
     function ValidarChavePrimaria: Boolean; override;
-    function ValidarCPF: Boolean; override;
     function ValidarTelefone: Boolean; override;
     function ValidarCnpj: Boolean; override;
     function ValidarCRM: Boolean; override;
@@ -166,11 +165,6 @@ begin
 end;
 
 function TfrmCadastroAtendimentos.ValidarCnpj: Boolean;
-begin
-
-end;
-
-function TfrmCadastroAtendimentos.ValidarCPF: Boolean;
 begin
 
 end;

@@ -104,6 +104,7 @@ inherited frmCadastroAtendimentos: TfrmCadastroAtendimentos
     Height = 23
     DataField = 'data_hora'
     DataSource = DM.DSAtendimentos
+    MaxLength = 19
     TabOrder = 8
   end
   object cbTipo: TDBComboBox
