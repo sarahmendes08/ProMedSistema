@@ -2,7 +2,7 @@
   Height = 807
   Width = 1006
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
-    VendorLib = 'C:\Users\Aluno\Desktop\TRABALHOFINAL\libmysql.dll'
+    VendorLib = 'C:\Users\Aluno\Desktop\Trabalho Final\ProMedSistema\libmysql.dll'
     Left = 96
     Top = 48
   end
@@ -63,6 +63,7 @@
     Top = 136
   end
   object FDTAtendimentos: TFDTable
+    Active = True
     IndexFieldNames = 'id_atendimento;id_hospital;id_medico;id_paciente'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -96,6 +97,7 @@
       FieldName = 'data_hora'
       Origin = 'data_hora'
       Required = True
+      EditMask = '00/00/0000 00:00:00;1;_'
     end
     object FDTAtendimentostipo_atendimento: TStringField
       FieldName = 'tipo_atendimento'
@@ -109,7 +111,6 @@
       Origin = 'queixa_principal'
       OnGetText = FDTAtendimentosqueixa_principalGetText
       BlobType = ftMemo
-      Size = 500
     end
     object FDTAtendimentosdiagnostico: TMemoField
       AutoGenerateValue = arDefault
@@ -225,6 +226,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'telefone'
       Origin = 'telefone'
+      EditMask = '(00)00000-0000;1;_'
     end
     object FDTClinicasstatus: TStringField
       FieldName = 'status'
@@ -269,6 +271,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'cnpj'
       Origin = 'cnpj'
+      EditMask = '00.000.000/0000-00;1;_'
       FixedChar = True
       Size = 14
     end
@@ -276,6 +279,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'telefone'
       Origin = 'telefone'
+      EditMask = '(00)00000-0000;1;_'
     end
     object FDTConveniosemail: TStringField
       AutoGenerateValue = arDefault
@@ -317,6 +321,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'cnpj'
       Origin = 'cnpj'
+      EditMask = '00.000.000/0000-00;1;_'
       FixedChar = True
       Size = 14
     end
@@ -324,6 +329,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'telefone'
       Origin = 'telefone'
+      EditMask = '(00)00000-0000;1;_'
     end
     object FDTHospitaisemail: TStringField
       AutoGenerateValue = arDefault
@@ -353,6 +359,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'cep'
       Origin = 'cep'
+      EditMask = '00000-000;1;_'
       FixedChar = True
       Size = 8
     end
@@ -383,7 +390,6 @@
     Top = 504
   end
   object FDTInternacoes: TFDTable
-    Active = True
     IndexFieldNames = 'id_convenio;id_internacao;id_medico;id_paciente;id_quarto'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -424,6 +430,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'data_entrada'
       Origin = 'data_entrada'
+      EditMask = '00/00/0000;1;_'
     end
     object FDTInternacoesmotivo_internacao: TMemoField
       FieldName = 'motivo_internacao'
@@ -441,6 +448,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'data_alta'
       Origin = 'data_alta'
+      EditMask = '00/00/0000;1;_'
     end
     object FDTInternacoesmotivo_alta: TStringField
       AutoGenerateValue = arDefault
@@ -483,6 +491,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'cpf'
       Origin = 'cpf'
+      EditMask = '000.000.000-00;1;_'
       FixedChar = True
       Size = 11
     end
@@ -508,6 +517,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'telefone'
       Origin = 'telefone'
+      EditMask = '(00)00000-0000'
     end
     object FDTMedicosemail: TStringField
       AutoGenerateValue = arDefault
@@ -542,7 +552,6 @@
     Top = 656
   end
   object FDTOcorrencias: TFDTable
-    Active = True
     IndexFieldNames = 'id_internacao;id_ocorrencia'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -614,6 +623,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'cpf'
       Origin = 'cpf'
+      EditMask = '000.000.000-00'
       FixedChar = True
       Size = 11
     end
@@ -621,6 +631,7 @@
       FieldName = 'data_nascimento'
       Origin = 'data_nascimento'
       Required = True
+      EditMask = '00/00/0000;1;_'
     end
     object FDTPacientessexo: TStringField
       AutoGenerateValue = arDefault
@@ -632,6 +643,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'telefone'
       Origin = 'telefone'
+      EditMask = '(00)00000-0000;1;_'
     end
     object FDTPacientesemail: TStringField
       AutoGenerateValue = arDefault
@@ -661,6 +673,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'cep'
       Origin = 'cep'
+      EditMask = '00000-000'
       FixedChar = True
       Size = 8
     end
@@ -691,6 +704,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'data_cadastro'
       Origin = 'data_cadastro'
+      EditMask = '00/00/0000;1;_'
     end
     object FDTPacientesstatus: TStringField
       FieldName = 'status'
@@ -731,7 +745,6 @@
     Top = 56
   end
   object FDTQuartos: TFDTable
-    Active = True
     IndexFieldNames = 'id_quarto;id_setor'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -815,11 +828,13 @@
       AutoGenerateValue = arDefault
       FieldName = 'data_nascimento'
       Origin = 'data_nascimento'
+      EditMask = '00/00/0000'
     end
     object FDTResponsaveistelefone: TStringField
       FieldName = 'telefone'
       Origin = 'telefone'
       Required = True
+      EditMask = '(00)00000-0000;1;_'
     end
     object FDTResponsaveisemail: TStringField
       AutoGenerateValue = arDefault
@@ -933,7 +948,6 @@
     Top = 304
   end
   object FDTTransferencias: TFDTable
-    Active = True
     IndexFieldNames = 
       'id_internacao;id_transferencia;id_quarto_destino;id_quarto_orige' +
       'm'
@@ -956,6 +970,7 @@
       AutoGenerateValue = arDefault
       FieldName = 'data_hora'
       Origin = 'data_hora'
+      EditMask = '00/00/0000 00:00;1;_'
     end
     object FDTTransferenciasmotivo: TStringField
       FieldName = 'motivo'
@@ -1018,7 +1033,6 @@
     Top = 472
   end
   object FDTUsuarios: TFDTable
-    Active = True
     IndexFieldNames = 'email'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]

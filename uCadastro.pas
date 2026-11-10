@@ -36,6 +36,8 @@ type
     function ValidarChavePrimaria: Boolean; virtual;
     function ValidarCPF: Boolean; virtual;
     function ValidarTelefone: Boolean; virtual;
+    function ValidarCnpj: Boolean; virtual;
+    function ValidarCRM: Boolean; virtual;
   end;
 
 var
@@ -57,7 +59,17 @@ begin
   Result := True;
 end;
 
+function TfrmCadastro.ValidarCnpj: Boolean;
+begin
+  Result := True;
+end;
+
 function TfrmCadastro.ValidarCPF: Boolean;
+begin
+  Result := True;
+end;
+
+function TfrmCadastro.ValidarCRM: Boolean;
 begin
   Result := True;
 end;
