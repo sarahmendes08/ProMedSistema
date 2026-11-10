@@ -390,6 +390,7 @@
     Top = 504
   end
   object FDTInternacoes: TFDTable
+    Active = True
     IndexFieldNames = 'id_convenio;id_internacao;id_medico;id_paciente;id_quarto'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
