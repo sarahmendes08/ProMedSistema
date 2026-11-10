@@ -1,0 +1,101 @@
+unit uPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ComCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    Timer1: TTimer;
+    StatusBar1: TStatusBar;
+    Cadastro1: TMenuItem;
+    Atendimentos1: TMenuItem;
+    Cidades1: TMenuItem;
+    Clinicas1: TMenuItem;
+    Convenios1: TMenuItem;
+    Hospitais1: TMenuItem;
+    Internacoes: TMenuItem;
+    Medicos1: TMenuItem;
+    Ocorrencias1: TMenuItem;
+    Pacientes1: TMenuItem;
+    Quartos1: TMenuItem;
+    Responsveis1: TMenuItem;
+    Salas1: TMenuItem;
+    Setores1: TMenuItem;
+    Transferencias1: TMenuItem;
+    Usuarios1: TMenuItem;
+    procedure Timer1Timer(Sender: TObject);
+    procedure Salas1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure Cidades1Click(Sender: TObject);
+    procedure Hospitais1Click(Sender: TObject);
+    procedure Clinicas1Click(Sender: TObject);
+    procedure Setores1Click(Sender: TObject);
+    procedure Usuarios1Click(Sender: TObject);
+    procedure Convenios1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    HoraLogin : TDateTime;
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses uCadastroSalas, uLogin, uCadastroCidades, uCadastroHospitais,
+  uCadastroClinicas, uCadastroSetores, uCadastroUsuarios, uCadastroConvenios;
+
+procedure TfrmPrincipal.Cidades1Click(Sender: TObject);
+begin
+  frmCadastroCidades.ShowModal;
+end;
+
+procedure TfrmPrincipal.Clinicas1Click(Sender: TObject);
+begin
+ frmCadastroClinicas.ShowModal;
+end;
+
+procedure TfrmPrincipal.Convenios1Click(Sender: TObject);
+begin
+  frmCadastroConvenio.ShowModal;
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  frmLogin.ShowModal;
+end;
+
+procedure TfrmPrincipal.Hospitais1Click(Sender: TObject);
+begin
+  frmCadastroHospitais.ShowModal;
+end;
+
+procedure TfrmPrincipal.Salas1Click(Sender: TObject);
+begin
+  frmCadastroSalas.ShowModal;
+end;
+
+procedure TfrmPrincipal.Setores1Click(Sender: TObject);
+begin
+  frmCadastroSetores.ShowModal;
+end;
+
+procedure TfrmPrincipal.Timer1Timer(Sender: TObject);
+begin
+   statusBar1.Panels[2].Text := 'Tempo Logado: '+ FormatDateTime('hh:mm:ss', Now - HoraLogin);
+end;
+
+procedure TfrmPrincipal.Usuarios1Click(Sender: TObject);
+begin
+  frmCadastroUsuarios.ShowModal;
+end;
+
+end.

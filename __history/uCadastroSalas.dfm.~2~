@@ -1,0 +1,93 @@
+inherited frmCadastroSalas: TfrmCadastroSalas
+  Caption = 'Cadastro de Salas'
+  ClientHeight = 492
+  ClientWidth = 628
+  StyleElements = [seFont, seClient, seBorder]
+  ExplicitWidth = 644
+  ExplicitHeight = 531
+  TextHeight = 15
+  object Label1: TLabel [0]
+    Left = 162
+    Top = 96
+    Width = 82
+    Height = 15
+    Caption = 'C'#243'digo da Sala:'
+  end
+  object Label2: TLabel [1]
+    Left = 214
+    Top = 139
+    Width = 30
+    Height = 15
+    Caption = 'Setor:'
+  end
+  object Label3: TLabel [2]
+    Left = 218
+    Top = 187
+    Width = 26
+    Height = 15
+    Caption = 'Tipo:'
+  end
+  object Label4: TLabel [3]
+    Left = 209
+    Top = 235
+    Width = 35
+    Height = 15
+    Caption = 'Status:'
+  end
+  inherited DBGrid1: TDBGrid
+    Top = 307
+    Width = 573
+    DataSource = DM.DSSalas
+  end
+  object bcTipo: TDBComboBox
+    Left = 250
+    Top = 184
+    Width = 145
+    Height = 23
+    DataField = 'tipo'
+    DataSource = DM.DSSalas
+    Items.Strings = (
+      'Cirurgia'
+      'Consultorio'
+      'Medica'#231#227'o'
+      'Recep'#231#227'o'
+      'Refeit'#243'rio'
+      'Triagem')
+    TabOrder = 7
+  end
+  object cbStatus: TDBComboBox
+    Left = 250
+    Top = 232
+    Width = 145
+    Height = 23
+    DataField = 'status'
+    DataSource = DM.DSSalas
+    Items.Strings = (
+      'Ativo'
+      'Inativo')
+    TabOrder = 8
+  end
+  object lcbSetor: TDBLookupComboBox
+    Left = 250
+    Top = 136
+    Width = 145
+    Height = 23
+    DataField = 'id_setor'
+    DataSource = DM.DSSalas
+    KeyField = 'id_setor'
+    ListField = 'nome'
+    ListSource = DM.DSSetores
+    TabOrder = 9
+  end
+  object edtIdSala: TDBEdit
+    Left = 250
+    Top = 93
+    Width = 49
+    Height = 23
+    DataField = 'id_sala'
+    DataSource = DM.DSSalas
+    DragCursor = crHandPoint
+    Enabled = False
+    TabOrder = 10
+  end
+end

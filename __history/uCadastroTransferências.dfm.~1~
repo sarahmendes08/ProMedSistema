@@ -1,0 +1,5 @@
+inherited frmCadastroTransferencia: TfrmCadastroTransferencia
+  Caption = 'frmCadastroTransferencia'
+  StyleElements = [seFont, seClient, seBorder]
+  TextHeight = 15
+end

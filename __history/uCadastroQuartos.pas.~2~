@@ -1,0 +1,54 @@
+unit uCadastroQuartos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastro, Data.DB, Vcl.StdCtrls,
+  Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.Buttons, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmCadastroQuartos = class(TfrmCadastro)
+    edtCodigo: TDBEdit;
+    edtNumero: TDBEdit;
+    edtAndar: TDBEdit;
+    cbTipo: TDBComboBox;
+    cbStatus: TDBComboBox;
+    lcbSetor: TDBLookupComboBox;
+    label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadastroQuartos: TfrmCadastroQuartos;
+
+implementation
+
+{$R *.dfm}
+
+uses uDM;
+
+procedure TfrmCadastroQuartos.btnSalvarClick(Sender: TObject);
+begin
+  inherited;
+  DM.FDTClinicasstatus.Value := cbStatus.Text;
+  DM.FDTClinicasstatus.Value := cbStatus.Text;
+end;
+
+procedure TfrmCadastroQuartos.FormCreate(Sender: TObject);
+begin
+  inherited;
+ Tabela := DM.FDTQuartos;
+end;
+
+end.

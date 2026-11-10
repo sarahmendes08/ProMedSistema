@@ -1,0 +1,42 @@
+program ProMed;
+
+uses
+  Vcl.Forms,
+  uPrincipal in 'uPrincipal.pas' {frmPrincipal},
+  uDM in 'uDM.pas' {DM: TDataModule},
+  uLogin in 'uLogin.pas' {frmLogin},
+  uCadastro in 'uCadastro.pas' {frmCadastro},
+  uCadastroSalas in 'uCadastroSalas.pas' {frmCadastroSalas},
+  uCadastroCidades in 'uCadastroCidades.pas' {frmCadastroCidades},
+  uCadastroHospitais in 'uCadastroHospitais.pas' {frmCadastroHospitais},
+  uCadastroClinicas in 'uCadastroClinicas.pas' {frmCadastroClinicas},
+  uCadastroSetores in 'uCadastroSetores.pas' {frmCadastroSetores},
+  uCadastroUsuarios in 'uCadastroUsuarios.pas' {frmCadastroUsuarios},
+  uCadastroConvenios in 'uCadastroConvenios.pas' {frmCadastroConvenio},
+  uCadastroMedicos in 'uCadastroMedicos.pas' {frmCadastroMedicos},
+  uCadastroQuartos in 'uCadastroQuartos.pas' {frmCadastroQuartos},
+  uCadastroResponsaveis in 'uCadastroResponsaveis.pas' {frmCadastroResponsaveis},
+  uCadastroPacientes in 'uCadastroPacientes.pas' {frmCadastroPaciente};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TfrmLogin, frmLogin);
+  Application.CreateForm(TfrmCadastro, frmCadastro);
+  Application.CreateForm(TfrmCadastroSalas, frmCadastroSalas);
+  Application.CreateForm(TfrmCadastroCidades, frmCadastroCidades);
+  Application.CreateForm(TfrmCadastroHospitais, frmCadastroHospitais);
+  Application.CreateForm(TfrmCadastroClinicas, frmCadastroClinicas);
+  Application.CreateForm(TfrmCadastroSetores, frmCadastroSetores);
+  Application.CreateForm(TfrmCadastroUsuarios, frmCadastroUsuarios);
+  Application.CreateForm(TfrmCadastroConvenio, frmCadastroConvenio);
+  Application.CreateForm(TfrmCadastroMedicos, frmCadastroMedicos);
+  Application.CreateForm(TfrmCadastroQuartos, frmCadastroQuartos);
+  Application.CreateForm(TfrmCadastroResponsaveis, frmCadastroResponsaveis);
+  Application.CreateForm(TfrmCadastroPaciente, frmCadastroPaciente);
+  Application.Run;
+end.

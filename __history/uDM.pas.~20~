@@ -1,0 +1,225 @@
+unit uDM;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Phys.MySQLDef, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.MySQL, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
+
+type
+  TDM = class(TDataModule)
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    FDConnection1: TFDConnection;
+    FDTSalas: TFDTable;
+    DSSalas: TDataSource;
+    FDTAtendimentos: TFDTable;
+    DSAtendimentos: TDataSource;
+    FDTCidades: TFDTable;
+    DSCidades: TDataSource;
+    FDTClinicas: TFDTable;
+    DSClinicas: TDataSource;
+    FDTConvenios: TFDTable;
+    DSConvenios: TDataSource;
+    FDTHospitais: TFDTable;
+    DSHospitais: TDataSource;
+    FDTInternacoes: TFDTable;
+    DSInternacoes: TDataSource;
+    FDTMedicos: TFDTable;
+    DSMedicos: TDataSource;
+    FDTOcorrencias: TFDTable;
+    DSOcorrencias: TDataSource;
+    FDTPacientes: TFDTable;
+    DSPacientes: TDataSource;
+    FDTQuartos: TFDTable;
+    DSQuartos: TDataSource;
+    FDTResponsaveis: TFDTable;
+    DSResponsaveis: TDataSource;
+    FDTSetores: TFDTable;
+    DSSetores: TDataSource;
+    FDTTransferencias: TFDTable;
+    DSTransferencias: TDataSource;
+    DSUsuarios: TDataSource;
+    FDTAtendimentosid_atendimento: TFDAutoIncField;
+    FDTAtendimentosid_paciente: TIntegerField;
+    FDTAtendimentosid_medico: TIntegerField;
+    FDTAtendimentosid_hospital: TIntegerField;
+    FDTAtendimentosdata_hora: TDateTimeField;
+    FDTAtendimentostipo_atendimento: TStringField;
+    FDTAtendimentosqueixa_principal: TMemoField;
+    FDTAtendimentosdiagnostico: TMemoField;
+    FDTAtendimentosobservacoes: TMemoField;
+    FDTCidadesid_cidade: TFDAutoIncField;
+    FDTCidadesnome: TStringField;
+    FDTCidadesuf: TStringField;
+    FDTClinicasid_clinica: TFDAutoIncField;
+    FDTClinicasid_hospital: TIntegerField;
+    FDTClinicasnome: TStringField;
+    FDTClinicasdescricao: TStringField;
+    FDTClinicastelefone: TStringField;
+    FDTConveniosid_convenio: TFDAutoIncField;
+    FDTConveniosnome: TStringField;
+    FDTConvenioscnpj: TStringField;
+    FDTConveniostelefone: TStringField;
+    FDTConveniosemail: TStringField;
+    FDTHospitaisid_hospital: TFDAutoIncField;
+    FDTHospitaisnome: TStringField;
+    FDTHospitaiscnpj: TStringField;
+    FDTHospitaistelefone: TStringField;
+    FDTHospitaisemail: TStringField;
+    FDTHospitaislogradouro: TStringField;
+    FDTHospitaisnumero: TStringField;
+    FDTHospitaisbairro: TStringField;
+    FDTHospitaiscep: TStringField;
+    FDTHospitaisid_cidade: TIntegerField;
+    FDTMedicosid_medico: TFDAutoIncField;
+    FDTMedicosnome: TStringField;
+    FDTMedicoscpf: TStringField;
+    FDTMedicoscrm: TStringField;
+    FDTMedicosuf_crm: TStringField;
+    FDTMedicosespecialidade: TStringField;
+    FDTMedicostelefone: TStringField;
+    FDTMedicosemail: TStringField;
+    FDTMedicosid_cidade: TIntegerField;
+    FDTOcorrenciasid_ocorrencia: TFDAutoIncField;
+    FDTOcorrenciasid_internacao: TIntegerField;
+    FDTOcorrenciasdata_hora: TDateTimeField;
+    FDTOcorrenciastipo: TStringField;
+    FDTOcorrenciasdescricao: TMemoField;
+    FDTPacientesid_paciente: TFDAutoIncField;
+    FDTPacientesnome: TStringField;
+    FDTPacientescpf: TStringField;
+    FDTPacientesdata_nascimento: TDateField;
+    FDTPacientessexo: TStringField;
+    FDTPacientestelefone: TStringField;
+    FDTPacientesemail: TStringField;
+    FDTPacienteslogradouro: TStringField;
+    FDTPacientesnumero: TStringField;
+    FDTPacientesbairro: TStringField;
+    FDTPacientescep: TStringField;
+    FDTPacientesid_cidade: TIntegerField;
+    FDTPacientesid_responsavel: TIntegerField;
+    FDTPacientesid_convenio: TIntegerField;
+    FDTPacientesnumero_prontuario: TStringField;
+    FDTPacientesdata_cadastro: TDateTimeField;
+    FDTQuartosid_quarto: TFDAutoIncField;
+    FDTQuartosid_setor: TIntegerField;
+    FDTQuartosnumero: TStringField;
+    FDTQuartosandar: TStringField;
+    FDTQuartostipo: TStringField;
+    FDTResponsaveisid_responsavel: TFDAutoIncField;
+    FDTResponsaveisnome: TStringField;
+    FDTResponsaveiscpf: TStringField;
+    FDTResponsaveisdata_nascimento: TDateField;
+    FDTResponsaveistelefone: TStringField;
+    FDTResponsaveisemail: TStringField;
+    FDTResponsaveislogradouro: TStringField;
+    FDTResponsaveisnumero: TStringField;
+    FDTResponsaveisbairro: TStringField;
+    FDTResponsaveisid_cidade: TIntegerField;
+    FDTSetoresid_setor: TFDAutoIncField;
+    FDTSetoresid_hospital: TIntegerField;
+    FDTSetoresid_clinica: TIntegerField;
+    FDTSetoresnome: TStringField;
+    FDTSetoresdescricao: TStringField;
+    FDTTransferenciasid_transferencia: TFDAutoIncField;
+    FDTTransferenciasid_internacao: TIntegerField;
+    FDTTransferenciasdata_hora: TDateTimeField;
+    FDTTransferenciasmotivo: TStringField;
+    FDTTransferenciasobservacoes: TMemoField;
+    FDTClinicasstatus: TStringField;
+    FDTHospitaisstatus: TStringField;
+    FDTConveniosstatus: TStringField;
+    FDTMedicosstatus: TStringField;
+    FDTPacientesstatus: TStringField;
+    FDTQuartosstatus: TStringField;
+    FDTSetoresstatus: TStringField;
+    FDTSalasid_sala: TFDAutoIncField;
+    FDTSalasid_setor: TIntegerField;
+    FDTSalastipo: TStringField;
+    FDTSalasstatus: TStringField;
+    FDTInternacoesid_internacao: TFDAutoIncField;
+    FDTInternacoesid_paciente: TIntegerField;
+    FDTInternacoesid_medico: TIntegerField;
+    FDTInternacoesid_convenio: TIntegerField;
+    FDTInternacoesid_quarto: TIntegerField;
+    FDTInternacoesdata_entrada: TDateTimeField;
+    FDTInternacoesmotivo_internacao: TMemoField;
+    FDTInternacoesstatus: TStringField;
+    FDTInternacoesdata_alta: TDateTimeField;
+    FDTInternacoesmotivo_alta: TStringField;
+    FDTInternacoescodigo_liberacao_hash: TStringField;
+    FDTSalassetor_sala: TStringField;
+    FDTUsuarios: TFDTable;
+    FDTUsuariosemail: TStringField;
+    FDTUsuariosnome: TStringField;
+    FDTUsuariossenha: TStringField;
+    FDTUsuariosocupacao: TStringField;
+    FDTHospitaisHospitais_Cidades: TStringField;
+    FDTClinicasclinica_hospital: TStringField;
+    FDTSetoresSetores_Hospitais: TStringField;
+    FDTSetoresSetores_Clinicas: TStringField;
+    FDTMedicosMedico_Cidades: TStringField;
+    FDTQuartosQuarto_Setores: TStringField;
+    FDTResponsaveisResponsaveis_Cidades: TStringField;
+    FDTPacientesCidade_Paciente: TStringField;
+    FDTPacientesResponsavel_Paciente: TStringField;
+    FDTPacientesConvenio_Paciente: TStringField;
+    FDTAtendimentosPaciente_Atendimento: TStringField;
+    FDTAtendimentosMedico_Atendimento: TStringField;
+    FDTAtendimentosHospital_Atendimento: TStringField;
+    FDTOcorrenciasOcorenciasInternações: TIntegerField;
+    FDTTransferenciasid_quarto_origem: TIntegerField;
+    FDTTransferenciasid_quarto_destino: TIntegerField;
+    procedure FDTAtendimentosqueixa_principalGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
+    procedure FDTAtendimentosdiagnosticoGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
+    procedure FDTAtendimentosobservacoesGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
+    procedure FDTInternacoesmotivo_internacaoGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DM: TDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+
+procedure TDM.FDTAtendimentosdiagnosticoGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+  Text := Sender.AsString;
+end;
+
+procedure TDM.FDTAtendimentosobservacoesGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+  Text := Sender.AsString;
+end;
+
+procedure TDM.FDTAtendimentosqueixa_principalGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+  Text := Sender.AsString;
+end;
+
+procedure TDM.FDTInternacoesmotivo_internacaoGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+  Text := Sender.AsString;
+end;
+
+end.

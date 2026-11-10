@@ -1,0 +1,206 @@
+inherited frmCadastroInternacoes: TfrmCadastroInternacoes
+  Caption = 'Cadastro de Interna'#231#245'es'
+  ClientHeight = 560
+  ClientWidth = 748
+  StyleElements = [seFont, seClient, seBorder]
+  OnCreate = FormCreate
+  ExplicitWidth = 764
+  ExplicitHeight = 599
+  TextHeight = 15
+  object Label1: TLabel [0]
+    Left = 94
+    Top = 97
+    Width = 42
+    Height = 15
+    Caption = 'C'#243'digo:'
+  end
+  object Label2: TLabel [1]
+    Left = 50
+    Top = 147
+    Width = 86
+    Height = 15
+    Caption = 'Data de Entrada:'
+  end
+  object Label3: TLabel [2]
+    Left = 69
+    Top = 195
+    Width = 67
+    Height = 15
+    Caption = 'Data da Alta:'
+  end
+  object Label4: TLabel [3]
+    Left = 55
+    Top = 243
+    Width = 81
+    Height = 15
+    Caption = 'Motivo da Alta:'
+  end
+  object Label5: TLabel [4]
+    Left = 24
+    Top = 294
+    Width = 112
+    Height = 15
+    Caption = 'C'#243'digo de Libera'#231#227'o:'
+  end
+  object Label6: TLabel [5]
+    Left = 317
+    Top = 97
+    Width = 35
+    Height = 15
+    Caption = 'Status:'
+  end
+  object Label7: TLabel [6]
+    Left = 304
+    Top = 147
+    Width = 48
+    Height = 15
+    Caption = 'Paciente:'
+  end
+  object Label8: TLabel [7]
+    Left = 309
+    Top = 195
+    Width = 43
+    Height = 15
+    Caption = 'M'#233'dico:'
+  end
+  object Label9: TLabel [8]
+    Left = 298
+    Top = 243
+    Width = 54
+    Height = 15
+    Caption = 'Conv'#234'nio:'
+  end
+  object Label10: TLabel [9]
+    Left = 312
+    Top = 294
+    Width = 40
+    Height = 15
+    Caption = 'Quarto:'
+  end
+  object Label11: TLabel [10]
+    Left = 540
+    Top = 97
+    Width = 116
+    Height = 15
+    Caption = 'Motivo da Interna'#231#227'o:'
+  end
+  inherited DBGrid1: TDBGrid
+    Top = 375
+    Width = 693
+    DataSource = DM.DSInternacoes
+  end
+  object edtCodigo: TDBEdit
+    Left = 142
+    Top = 94
+    Width = 121
+    Height = 23
+    DataField = 'id_internacao'
+    DataSource = DM.DSInternacoes
+    Enabled = False
+    TabOrder = 7
+  end
+  object edtDataEntrada: TDBEdit
+    Left = 142
+    Top = 144
+    Width = 121
+    Height = 23
+    DataField = 'data_entrada'
+    DataSource = DM.DSInternacoes
+    TabOrder = 8
+  end
+  object edtDataAlta: TDBEdit
+    Left = 142
+    Top = 189
+    Width = 121
+    Height = 23
+    DataField = 'data_alta'
+    DataSource = DM.DSInternacoes
+    TabOrder = 9
+  end
+  object edtCodLiberacao: TDBEdit
+    Left = 142
+    Top = 291
+    Width = 121
+    Height = 23
+    DataField = 'codigo_liberacao_hash'
+    DataSource = DM.DSInternacoes
+    TabOrder = 10
+  end
+  object edtMotivoAlta: TDBEdit
+    Left = 142
+    Top = 237
+    Width = 121
+    Height = 23
+    DataField = 'motivo_alta'
+    DataSource = DM.DSInternacoes
+    TabOrder = 11
+  end
+  object mMotivoInternacao: TDBMemo
+    Left = 540
+    Top = 118
+    Width = 185
+    Height = 89
+    DataField = 'motivo_internacao'
+    DataSource = DM.DSInternacoes
+    TabOrder = 12
+  end
+  object cbStatus: TDBComboBox
+    Left = 357
+    Top = 94
+    Width = 145
+    Height = 23
+    DataField = 'status'
+    DataSource = DM.DSInternacoes
+    Items.Strings = (
+      'Internado'
+      'Alta M'#233'dica'
+      #211'bito')
+    TabOrder = 13
+  end
+  object lcbPaciente: TDBLookupComboBox
+    Left = 357
+    Top = 144
+    Width = 145
+    Height = 23
+    DataField = 'id_paciente'
+    DataSource = DM.DSInternacoes
+    KeyField = 'id_paciente'
+    ListField = 'nome'
+    ListSource = DM.DSPacientes
+    TabOrder = 14
+  end
+  object lcbMedico: TDBLookupComboBox
+    Left = 357
+    Top = 189
+    Width = 145
+    Height = 23
+    DataField = 'id_medico'
+    DataSource = DM.DSInternacoes
+    KeyField = 'id_medico'
+    ListField = 'nome'
+    ListSource = DM.DSMedicos
+    TabOrder = 15
+  end
+  object lcbConvenio: TDBLookupComboBox
+    Left = 357
+    Top = 237
+    Width = 145
+    Height = 23
+    DataField = 'id_convenio'
+    DataSource = DM.DSInternacoes
+    KeyField = 'id_convenio'
+    ListField = 'nome'
+    ListSource = DM.DSConvenios
+    TabOrder = 16
+  end
+  object lcbQuarto: TDBLookupComboBox
+    Left = 357
+    Top = 291
+    Width = 145
+    Height = 23
+    KeyField = 'id_quarto'
+    ListField = 'numero'
+    ListSource = DM.DSQuartos
+    TabOrder = 17
+  end
+end

@@ -1,0 +1,43 @@
+inherited frmCadastroTransferencia: TfrmCadastroTransferencia
+  Caption = 'Cadastro de Tr'#226'nsferencias'
+  StyleElements = [seFont, seClient, seBorder]
+  TextHeight = 15
+  object Label1: TLabel [0]
+    Left = 32
+    Top = 80
+    Width = 42
+    Height = 15
+    Caption = 'C'#243'digo:'
+  end
+  object Label3: TLabel [1]
+    Left = 32
+    Top = 176
+    Width = 26
+    Height = 15
+    Caption = 'Tipo:'
+  end
+  object Label4: TLabel [2]
+    Left = 344
+    Top = 80
+    Width = 59
+    Height = 15
+    Caption = 'Interna'#231#227'o:'
+  end
+  object Label5: TLabel [3]
+    Left = 341
+    Top = 131
+    Width = 54
+    Height = 15
+    Caption = 'Descri'#231#227'o:'
+  end
+  object TLabel [4]
+    Left = 32
+    Top = 129
+    Width = 99
+    Height = 15
+    Caption = 'Quarto de Origem:'
+  end
+  inherited DBGrid1: TDBGrid
+    DataSource = DM.DSTransferencias
+  end
+end

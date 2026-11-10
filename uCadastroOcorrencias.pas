@@ -1,0 +1,51 @@
+unit uCadastroOcorrencias;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastro, Data.DB, Vcl.StdCtrls,
+  Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.Buttons, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmCadastroOcorrencia = class(TfrmCadastro)
+    mDescricao: TDBMemo;
+    lcbInternacoes: TDBLookupComboBox;
+    edtCodigo: TDBEdit;
+    edtDataHora: TDBEdit;
+    cbTipo: TDBComboBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadastroOcorrencia: TfrmCadastroOcorrencia;
+
+implementation
+
+{$R *.dfm}
+
+uses uDM;
+
+procedure TfrmCadastroOcorrencia.btnSalvarClick(Sender: TObject);
+begin
+  DM.FDTOcorrenciastipo.Value := cbTipo.Text;
+  inherited;
+end;
+
+procedure TfrmCadastroOcorrencia.FormCreate(Sender: TObject);
+begin
+  inherited;
+  Tabela := DM.FDTOcorrencias;
+end;
+
+end.

@@ -1,0 +1,198 @@
+inherited frmCadastroHospitais: TfrmCadastroHospitais
+  Caption = 'Cadastro de Hospitais'
+  ClientHeight = 494
+  ClientWidth = 826
+  StyleElements = [seFont, seClient, seBorder]
+  OnCreate = FormCreate
+  ExplicitWidth = 842
+  ExplicitHeight = 533
+  TextHeight = 15
+  object Label1: TLabel [0]
+    Left = 26
+    Top = 70
+    Width = 42
+    Height = 15
+    Caption = 'C'#243'digo:'
+  end
+  object Label2: TLabel [1]
+    Left = 26
+    Top = 112
+    Width = 36
+    Height = 15
+    Caption = 'Nome:'
+  end
+  object Label3: TLabel [2]
+    Left = 26
+    Top = 227
+    Width = 32
+    Height = 15
+    Caption = 'Email:'
+  end
+  object Label4: TLabel [3]
+    Left = 399
+    Top = 70
+    Width = 65
+    Height = 15
+    Caption = 'Logradouro:'
+  end
+  object Label5: TLabel [4]
+    Left = 399
+    Top = 150
+    Width = 47
+    Height = 15
+    Caption = 'N'#250'mero:'
+  end
+  object Label6: TLabel [5]
+    Left = 399
+    Top = 184
+    Width = 34
+    Height = 15
+    Caption = 'Bairro:'
+  end
+  object Label7: TLabel [6]
+    Left = 399
+    Top = 115
+    Width = 24
+    Height = 15
+    Caption = 'CEP:'
+  end
+  object Label8: TLabel [7]
+    Left = 24
+    Top = 150
+    Width = 30
+    Height = 15
+    Caption = 'CNPJ:'
+  end
+  object Label9: TLabel [8]
+    Left = 399
+    Top = 227
+    Width = 40
+    Height = 15
+    Caption = 'Cidade:'
+  end
+  object Label10: TLabel [9]
+    Left = 399
+    Top = 263
+    Width = 35
+    Height = 15
+    Caption = 'Status:'
+  end
+  object Label11: TLabel [10]
+    Left = 26
+    Top = 186
+    Width = 47
+    Height = 15
+    Caption = 'Telefone:'
+  end
+  inherited DBGrid1: TDBGrid
+    Top = 309
+    Width = 771
+    DataSource = DM.DSHospitais
+  end
+  object edtCodigo: TDBEdit
+    Left = 79
+    Top = 67
+    Width = 47
+    Height = 23
+    DataField = 'id_hospital'
+    DataSource = DM.DSHospitais
+    Enabled = False
+    TabOrder = 7
+  end
+  object edtNome: TDBEdit
+    Left = 79
+    Top = 109
+    Width = 149
+    Height = 23
+    DataField = 'nome'
+    DataSource = DM.DSHospitais
+    TabOrder = 8
+  end
+  object edtCNPJ: TDBEdit
+    Left = 79
+    Top = 149
+    Width = 149
+    Height = 23
+    DataField = 'cnpj'
+    DataSource = DM.DSHospitais
+    TabOrder = 9
+  end
+  object edtTelefone: TDBEdit
+    Left = 79
+    Top = 181
+    Width = 143
+    Height = 23
+    DataField = 'telefone'
+    DataSource = DM.DSHospitais
+    TabOrder = 10
+  end
+  object edtEmail: TDBEdit
+    Left = 79
+    Top = 224
+    Width = 287
+    Height = 23
+    DataField = 'email'
+    DataSource = DM.DSHospitais
+    TabOrder = 11
+  end
+  object edtLogradouro: TDBEdit
+    Left = 470
+    Top = 67
+    Width = 264
+    Height = 23
+    DataField = 'logradouro'
+    DataSource = DM.DSHospitais
+    TabOrder = 12
+  end
+  object edtNumero: TDBEdit
+    Left = 470
+    Top = 147
+    Width = 43
+    Height = 23
+    DataField = 'numero'
+    DataSource = DM.DSHospitais
+    TabOrder = 13
+  end
+  object edtBairro: TDBEdit
+    Left = 470
+    Top = 181
+    Width = 121
+    Height = 23
+    DataField = 'bairro'
+    DataSource = DM.DSHospitais
+    TabOrder = 14
+  end
+  object edtCEP: TDBEdit
+    Left = 470
+    Top = 109
+    Width = 121
+    Height = 23
+    DataField = 'cep'
+    DataSource = DM.DSHospitais
+    TabOrder = 15
+  end
+  object lcbCidade: TDBLookupComboBox
+    Left = 470
+    Top = 224
+    Width = 145
+    Height = 23
+    DataField = 'id_cidade'
+    DataSource = DM.DSHospitais
+    KeyField = 'id_cidade'
+    ListField = 'nome'
+    ListSource = DM.DSCidades
+    TabOrder = 16
+  end
+  object cbStatus: TDBComboBox
+    Left = 470
+    Top = 258
+    Width = 145
+    Height = 23
+    DataField = 'status'
+    DataSource = DM.DSHospitais
+    Items.Strings = (
+      'Ativo'
+      'Inativo')
+    TabOrder = 17
+  end
+end

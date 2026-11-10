@@ -1,0 +1,53 @@
+unit uCadastroSetores;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastro, Data.DB, Vcl.StdCtrls,
+  Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.Buttons, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmCadastroSetores = class(TfrmCadastro)
+    edtNome: TDBEdit;
+    edtCodigo: TDBEdit;
+    edtDescricao: TDBEdit;
+    cbStatus: TDBComboBox;
+    lcbClinica: TDBLookupComboBox;
+    lcbHospital: TDBLookupComboBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadastroSetores: TfrmCadastroSetores;
+
+implementation
+
+{$R *.dfm}
+
+uses uDM;
+
+procedure TfrmCadastroSetores.btnSalvarClick(Sender: TObject);
+begin
+  DM.FDTSetoresstatus.Value := cbStatus.Text;
+  inherited;
+end;
+
+procedure TfrmCadastroSetores.FormCreate(Sender: TObject);
+begin
+  inherited;
+  Tabela := DM.FDTSetores;
+end;
+
+end.

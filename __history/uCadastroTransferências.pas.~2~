@@ -1,0 +1,31 @@
+unit uCadastroTransferências;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastro, Data.DB, Vcl.StdCtrls,
+  Vcl.Buttons, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls;
+
+type
+  TfrmCadastroTransferencia = class(TfrmCadastro)
+    Label1: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadastroTransferencia: TfrmCadastroTransferencia;
+
+implementation
+
+{$R *.dfm}
+
+uses uDM;
+
+end.
