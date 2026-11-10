@@ -20,7 +20,8 @@ uses
   uCadastroAtendimentos in 'uCadastroAtendimentos.pas' {frmCadastroAtendimentos},
   uCadastroInternacoes in 'uCadastroInternacoes.pas' {frmCadastroInternacoes},
   uCadastroOcorrencias in 'uCadastroOcorrencias.pas' {frmCadastroOcorrencia},
-  uCadastroTransferências in 'uCadastroTransferências.pas' {frmCadastroTransferencia};
+  uCadastroTransferências in 'uCadastroTransferências.pas' {frmCadastroTransferencia},
+  uPesqAtendimentos in 'uPesqAtendimentos.pas' {frmPesqAtendimentos};
 
 {$R *.res}
 
@@ -46,5 +47,6 @@ begin
   Application.CreateForm(TfrmCadastroInternacoes, frmCadastroInternacoes);
   Application.CreateForm(TfrmCadastroOcorrencia, frmCadastroOcorrencia);
   Application.CreateForm(TfrmCadastroTransferencia, frmCadastroTransferencia);
+  Application.CreateForm(TfrmPesqAtendimentos, frmPesqAtendimentos);
   Application.Run;
 end.

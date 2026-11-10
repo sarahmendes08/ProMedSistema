@@ -52,8 +52,6 @@ type
     FDTAtendimentosqueixa_principal: TMemoField;
     FDTAtendimentosdiagnostico: TMemoField;
     FDTAtendimentosobservacoes: TMemoField;
-    FDTAtendimentosstatus: TStringField;
-    FDTAtendimentosdata_criacao: TDateTimeField;
     FDTCidadesid_cidade: TFDAutoIncField;
     FDTCidadesnome: TStringField;
     FDTCidadesuf: TStringField;
@@ -91,8 +89,6 @@ type
     FDTOcorrenciasdata_hora: TDateTimeField;
     FDTOcorrenciastipo: TStringField;
     FDTOcorrenciasdescricao: TMemoField;
-    FDTOcorrenciasconduta: TMemoField;
-    FDTOcorrenciasdata_criacao: TDateTimeField;
     FDTPacientesid_paciente: TFDAutoIncField;
     FDTPacientesnome: TStringField;
     FDTPacientescpf: TStringField;
@@ -150,15 +146,12 @@ type
     FDTInternacoesid_medico: TIntegerField;
     FDTInternacoesid_convenio: TIntegerField;
     FDTInternacoesid_quarto: TIntegerField;
-    FDTInternacoesid_usuario_entrada: TIntegerField;
     FDTInternacoesdata_entrada: TDateTimeField;
     FDTInternacoesmotivo_internacao: TMemoField;
     FDTInternacoesstatus: TStringField;
     FDTInternacoesdata_alta: TDateTimeField;
     FDTInternacoesmotivo_alta: TStringField;
-    FDTInternacoesid_usuario_alta: TIntegerField;
     FDTInternacoescodigo_liberacao_hash: TStringField;
-    FDTInternacoesdata_criacao: TDateTimeField;
     FDTSalassetor_sala: TStringField;
     FDTUsuarios: TFDTable;
     FDTUsuariosemail: TStringField;
@@ -171,6 +164,28 @@ type
     FDTSetoresSetores_Clinicas: TStringField;
     FDTMedicosMedico_Cidades: TStringField;
     FDTQuartosQuarto_Setores: TStringField;
+    FDTResponsaveisResponsaveis_Cidades: TStringField;
+    FDTPacientesCidade_Paciente: TStringField;
+    FDTPacientesResponsavel_Paciente: TStringField;
+    FDTPacientesConvenio_Paciente: TStringField;
+    FDTAtendimentosPaciente_Atendimento: TStringField;
+    FDTAtendimentosMedico_Atendimento: TStringField;
+    FDTAtendimentosHospital_Atendimento: TStringField;
+    FDTOcorrenciasOcorenciasInternações: TIntegerField;
+    FDTTransferenciasid_quarto_origem: TIntegerField;
+    FDTTransferenciasid_quarto_destino: TIntegerField;
+    FDTTransferenciastranferencia_QuartoDeorigem: TIntegerField;
+    FDTTransferenciasTransferência_QuartoDestino: TIntegerField;
+    FDTTransferenciasTransferencia_Internacao: TIntegerField;
+    FDQuery1: TFDQuery;
+    procedure FDTAtendimentosqueixa_principalGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
+    procedure FDTAtendimentosdiagnosticoGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
+    procedure FDTAtendimentosobservacoesGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
+    procedure FDTInternacoesmotivo_internacaoGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
   private
     { Private declarations }
   public
@@ -185,5 +200,30 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+
+procedure TDM.FDTAtendimentosdiagnosticoGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+  Text := Sender.AsString;
+end;
+
+procedure TDM.FDTAtendimentosobservacoesGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+  Text := Sender.AsString;
+end;
+
+procedure TDM.FDTAtendimentosqueixa_principalGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+  Text := Sender.AsString;
+end;
+
+procedure TDM.FDTInternacoesmotivo_internacaoGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+  Text := Sender.AsString;
+end;
 
 end.

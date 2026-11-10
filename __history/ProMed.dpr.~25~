@@ -13,7 +13,15 @@ uses
   uCadastroSetores in 'uCadastroSetores.pas' {frmCadastroSetores},
   uCadastroUsuarios in 'uCadastroUsuarios.pas' {frmCadastroUsuarios},
   uCadastroConvenios in 'uCadastroConvenios.pas' {frmCadastroConvenio},
-  uCadastroMedicos in 'uCadastroMedicos.pas' {frmCadastroMedicos};
+  uCadastroMedicos in 'uCadastroMedicos.pas' {frmCadastroMedicos},
+  uCadastroQuartos in 'uCadastroQuartos.pas' {frmCadastroQuartos},
+  uCadastroResponsaveis in 'uCadastroResponsaveis.pas' {frmCadastroResponsaveis},
+  uCadastroPacientes in 'uCadastroPacientes.pas' {frmCadastroPaciente},
+  uCadastroAtendimentos in 'uCadastroAtendimentos.pas' {frmCadastroAtendimentos},
+  uCadastroInternacoes in 'uCadastroInternacoes.pas' {frmCadastroInternacoes},
+  uCadastroOcorrencias in 'uCadastroOcorrencias.pas' {frmCadastroOcorrencia},
+  uCadastroTransferências in 'uCadastroTransferências.pas' {frmCadastroTransferencia},
+  uPesqatendimentos in 'uPesqatendimentos.pas' {frmPesqAtendimentos};
 
 {$R *.res}
 
@@ -32,5 +40,13 @@ begin
   Application.CreateForm(TfrmCadastroUsuarios, frmCadastroUsuarios);
   Application.CreateForm(TfrmCadastroConvenio, frmCadastroConvenio);
   Application.CreateForm(TfrmCadastroMedicos, frmCadastroMedicos);
+  Application.CreateForm(TfrmCadastroQuartos, frmCadastroQuartos);
+  Application.CreateForm(TfrmCadastroResponsaveis, frmCadastroResponsaveis);
+  Application.CreateForm(TfrmCadastroPaciente, frmCadastroPaciente);
+  Application.CreateForm(TfrmCadastroAtendimentos, frmCadastroAtendimentos);
+  Application.CreateForm(TfrmCadastroInternacoes, frmCadastroInternacoes);
+  Application.CreateForm(TfrmCadastroOcorrencia, frmCadastroOcorrencia);
+  Application.CreateForm(TfrmCadastroTransferencia, frmCadastroTransferencia);
+  Application.CreateForm(TfrmPesqAtendimentos, frmPesqAtendimentos);
   Application.Run;
 end.

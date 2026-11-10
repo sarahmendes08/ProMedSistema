@@ -1,0 +1,58 @@
+unit uPesqAtendimentos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.jpeg;
+
+type
+  TfrmPesqAtendimentos = class(TForm)
+    edtPesq: TEdit;
+    DBGrid1: TDBGrid;
+    btnPesq: TButton;
+    Label1: TLabel;
+    rdgPesqAtendimento: TRadioGroup;
+    Panel1: TPanel;
+    Label3: TLabel;
+    Image2: TImage;
+    procedure btnPesqClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPesqAtendimentos: TfrmPesqAtendimentos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPesqAtendimentos.btnPesqClick(Sender: TObject);
+begin
+//  DM.FDQueryPesqAtendimentos.Close;
+//  if edtPesq.Text <> '' then
+//  begin
+//    if rdgPesqAtendimento.ItemIndex = 0 then  // Pesquisa pelo código
+//      DM.FDQueryPesqAtendimentos.SQL[1] := 'Where id_atendimento = ' + Trim(edtPesq.Text)
+//    else if rdgPesqAtendimento.ItemIndex = 1 then
+//      DM.FDQueryPesqAtendimentos.SQL[1] := 'Where nome like ' + QuotedStr(Trim(edtPesq.Text) + '%')
+//    else
+//      DM.FDQueryPesqAtendimentos.SQL[1] := 'Where cpf like ' + QuotedStr(Trim(edtPesq.Text) + '%')
+//  end
+//  else
+//    DM.FDQueryPesqAtendimentos.SQL[1] := '';
+//  DM.FDQueryPesqAtendimentos.Open;
+end;
+
+procedure TfrmPesqAtendimentos.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  edtPesq.Text := '';
+end;
+
+end.

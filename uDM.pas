@@ -177,11 +177,6 @@ type
     FDTTransferenciastranferencia_QuartoDeorigem: TIntegerField;
     FDTTransferenciasTransferência_QuartoDestino: TIntegerField;
     FDTTransferenciasTransferencia_Internacao: TIntegerField;
-<<<<<<< HEAD
-    FDQuery1: TFDQuery;
-=======
-    FDConnection2: TFDConnection;
->>>>>>> c5e0887ab7c8be32f73ecb4d71ebdc5b9478f7ae
     procedure FDTAtendimentosqueixa_principalGetText(Sender: TField;
       var Text: string; DisplayText: Boolean);
     procedure FDTAtendimentosdiagnosticoGetText(Sender: TField;

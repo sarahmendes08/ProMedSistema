@@ -1055,9 +1055,4 @@
       Size = 50
     end
   end
-  object FDQuery1: TFDQuery
-    Connection = FDConnection1
-    Left = 880
-    Top = 368
-  end
 end
